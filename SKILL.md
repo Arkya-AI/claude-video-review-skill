@@ -1,13 +1,13 @@
 ---
 name: video-review
-description: Independent review of any finished video (reel, Short, explainer, lecture, AI avatar or AI animated film) before it is published. Measures the file, checks every frame, has Gemini watch it with sound and GPT check stills, then gives a SHIP, FIX, REJECT or INCONCLUSIVE verdict and a timestamped repair list. Use after rendering any video and before showing or publishing it.
+description: Independent review of any finished video (reel, Short, explainer, lecture, AI avatar or AI animated film) before it is published. Measures the file, has Jev by TypeSafe AI check every frame, Gemini watch it with sound and GPT check stills, then gives a SHIP, FIX, REJECT or INCONCLUSIVE verdict and a timestamped repair list. Use after rendering any video and before showing or publishing it.
 ---
 
 # Video review
 
 Version 2.4 · November 2026 · MIT licence · https://www.arkya.ai/claude-video-review-skill
 
-Claude cannot play a video file with its sound, and the session that built a video cannot judge it, because it knows what it meant to make. This skill gets the finished file watched and heard by models that know nothing about the build, measures what models cannot see or hear reliably, and returns confirmed findings with fixes. It judges the story as told, the characters and design consistency, acting and expressions, motion, staging, pace and editing, transitions, voice, sound design, music, lip sync, text and captions, cliches and AI tells, and platform finish. The question is not only "is it technically clean" but "is this a good video for a person to watch", from the viewer's chair and from the editor's chair.
+Claude cannot play a video file with its sound, and the session that built a video cannot judge it, because it knows what it meant to make. This skill gets the finished file checked frame by frame by Jev (TypeSafe AI), watched and heard by Gemini and reviewed in stills by GPT, models that know nothing about the build, measures what models cannot see or hear reliably, and returns confirmed findings with fixes. It judges the story as told, the characters and design consistency, acting and expressions, motion, staging, pace and editing, transitions, voice, sound design, music, lip sync, text and captions, cliches and AI tells, and platform finish. The question is not only "is it technically clean" but "is this a good video for a person to watch", from the viewer's chair and from the editor's chair.
 
 Run it on every video a person outside the session will watch, before you show it or publish it.
 

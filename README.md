@@ -1,16 +1,16 @@
 # Claude Video Review Skill
 
-Claude Code can make a video, but it cannot watch or hear the result. This Claude Code skill reviews the finished video before you publish it: it measures the audio and picture, checks every frame, and asks Gemini and GPT to review the video. Claude then receives a verdict and a list of problems with timestamps and a fix for each one.
+Claude Code can make a video, but it cannot watch or hear the result. This Claude Code skill reviews the finished video before you publish it with three AI reviewers: **Jev by TypeSafe AI** checks every frame, **Gemini** watches the video with its sound, and **GPT** reviews still frames. Measurement scripts check what models miss, and Claude receives a verdict and a list of problems with timestamps and a fix for each one.
 
 **Install guide, sample report and the full method: https://www.arkya.ai/claude-video-review-skill**
 
-## What it does
+## How Jev, Gemini and GPT review your video
 
 | Layer | Tools | What it catches |
 |---|---|---|
 | 1. Measure | ffmpeg, Python, OpenCV, Whisper | loudness against -14 LUFS, true peak, clicks, silences, black and frozen frames, duplicated frames (judder), jumps at clip seams, transcript against the script |
-| 2. Check every frame | Jev by TypeSafe | wrong face against the reference sheet, extra person, mouth talking in a silent shot, broken hands, garbled text, a key action that never happens |
-| 3. Watch and listen, blind | Gemini with sound, GPT on stills | first reaction, timestamped rubric, audio-only pass, story retell, sound-off watch, seven personas |
+| 2. Check every frame | Jev by TypeSafe AI | wrong face against the reference sheet, extra person, mouth talking in a silent shot, broken hands, garbled text, a key action that never happens |
+| 3. Watch and listen, blind | Gemini with sound, GPT on still frames | first reaction, timestamped rubric, audio-only pass, story retell, sound-off watch, seven personas |
 | 4. Confirm and decide | Claude | confirms a problem when a measurement and a reviewer agree, two reviews agree, or the frames show it; verdict SHIP, FIX, REJECT or INCONCLUSIVE |
 
 A 30-second video at 24 fps has 720 frames, and most AI generation glitches last one to four frames, so the skill checks every frame instead of a sample. It finds problems such as a mouth moving in a shot with no dialogue, a clip slowed down to fit the music, a face that changes for a few frames, clicks at edits, and captions that cover a face.
@@ -24,7 +24,7 @@ The skill runs on your machine with your own accounts. It ships with no keys, an
 | Service | What it does | How to connect it |
 |---|---|---|
 | Gemini (required) | Watches the full video with its sound | `GEMINI_API_KEY` in the skill folder's `.env` ([create a key](https://aistudio.google.com/apikey)) |
-| Jev by TypeSafe (recommended) | Checks every frame against the character reference sheets | `TYPESAFE_API_KEY` in the same `.env` ([create a key](https://console.typesafe.ai)) |
+| Jev by TypeSafe AI (recommended) | Checks every frame against the character reference sheets | `TYPESAFE_API_KEY` in the same `.env` ([create a key](https://console.typesafe.ai)) |
 | GPT through the Codex CLI (recommended) | Reviews still frames as a second reviewer | your own OpenAI sign-in: `codex login` |
 
 Copy `.env.example` to `.env` and fill in your keys. `.env` is in `.gitignore`, so your keys stay out of version control.
