@@ -1,5 +1,7 @@
 # Claude Video Review Skill
 
+![Claude Video Review Skill: measure audio and picture, Jev checks every frame, Gemini and GPT review, confirm then fix](assets/banner.jpg)
+
 Claude Code can make a video, but it cannot watch or hear the result. This Claude Code skill reviews the finished video before you publish it with three AI reviewers: **Jev by TypeSafe AI** checks every frame, **Gemini** watches the video with its sound, and **GPT** reviews still frames. Measurement scripts check what models miss, and Claude receives a verdict and a list of problems with timestamps and a fix for each one.
 
 **Install guide, sample report and the full method: https://www.arkya.ai/claude-video-review-skill**
