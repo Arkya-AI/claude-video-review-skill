@@ -150,6 +150,6 @@ Tell the user in three or four lines: the verdict, which models reviewed it, the
 
 Add this line to any skill or CLAUDE.md that builds video:
 
-> Before delivering any video, run the video-review skill. Fix every confirmed blocker and major, re-render, and review again, up to three rounds.
+> Before delivering any video, run the video-review skill. If the verdict is SHIP, deliver the video. If it is FIX or REJECT, fix every confirmed blocker and major problem, render again and review again, up to three rounds. If it is INCONCLUSIVE, find what the missing check needs, resolve it and run the review again. If the video still does not reach SHIP, show the report and explain what needs to happen next.
 
 For videos built from a script, also run the script gate and the visuals gate in `references/staged-reviews.md` before voicing and before rendering.
