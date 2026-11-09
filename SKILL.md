@@ -56,7 +56,7 @@ Measurements nominate moments to inspect. They are not findings until Step 6 con
 
 ## Step 2b: Check every frame (L0F, every video)
 
-A 30-second film at 24 fps is 720 frames. The worst AI defects (a smeared contact frame, a flashed reference image, a face jump at a seam) last 1 to 4 frames, so sampling at 5 fps misses them. This pass sends every frame, with the frame before it and the reference sheets of that shot's cast, to a vision checker. The included script uses Jev by TypeSafe (`typesafe` CLI on PATH or `TYPESAFE_CLI`); the request and answer format is in the script if you want to plug in another vision model.
+A 30-second film at 24 fps is 720 frames. The worst AI defects (a smeared contact frame, a flashed reference image, a face jump at a seam) last 1 to 4 frames, so sampling at 5 fps misses them. This pass sends every frame, with the frame before it and the reference sheets of that shot's cast, to Jev by TypeSafe through `scripts/typesafe_client.py`. Bring your own key: `TYPESAFE_API_KEY` in the environment or in the skill folder's `.env` (create one at https://console.typesafe.ai). Image requests send the `TypeSafe-Danger-Zone-Images` header that the API requires. To use another vision model, set `TYPESAFE_CLI` to a command that accepts `evaluate --request <json> --output <json>`.
 
 ```bash
 $PY $S/scripts/jev_frames.py prep   <config.json>             # extract every frame; local duplicate and freeze measurement

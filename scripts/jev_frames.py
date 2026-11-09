@@ -2,7 +2,8 @@
 """Every-frame pass for the Claude Video Review Skill. Checks EVERY frame of a finished film with Jev (TypeSafe), compares each
 frame with the frame before it, and writes a repair list Claude can act on.
 
-usage (Python 3.10+, numpy, opencv-python, ffmpeg; the Jev checker CLI by TypeSafe on PATH or in TYPESAFE_CLI):
+usage (Python 3.10+, numpy, opencv-python, ffmpeg; bring your own TypeSafe key: TYPESAFE_API_KEY in the environment
+or in the skill folder's .env; requests go through scripts/typesafe_client.py):
   jev_frames.py prep   CONFIG.json    extract every frame, measure duplicate and frozen runs locally
   jev_frames.py run    CONFIG.json [--workers 6] [--limit N]   one Jev request per frame (cached)
   jev_frames.py report CONFIG.json    frames.csv, summary.json, repair_list.md, flagged_sheet.jpg
@@ -16,7 +17,7 @@ quality, timing, acting over time or sound. Absolute defect probabilities are no
 own baseline. Every flag is a candidate until a person or a second pass confirms it on the frames.
 """
 import json, os, sys, glob, shutil, subprocess, statistics as st, concurrent.futures as cf
-CLI = os.environ.get('TYPESAFE_CLI') or shutil.which('typesafe') or os.path.expanduser('~/.local/bin/typesafe')
+CLI = os.environ['TYPESAFE_CLI'].split() if os.environ.get('TYPESAFE_CLI') else [sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'typesafe_client.py')]
 
 def load(cfgp):
     c = json.load(open(cfgp)); o = c['out']
@@ -106,7 +107,7 @@ def call(args):
         return name, 'cached'
     req = os.path.join(c['_req'], name + '.json'); json.dump(build(c, i, fps), open(req, 'w'))
     for attempt in range(3):
-        r = subprocess.run([CLI, 'evaluate', '--request', req, '--output', out], capture_output=True, text=True)
+        r = subprocess.run(CLI + ['evaluate', '--request', req, '--output', out], capture_output=True, text=True)
         if r.returncode == 0:
             return name, 'ok'
     return name, 'ERR ' + r.stderr.strip()[:160]
@@ -276,7 +277,7 @@ def box(c, top):
                 'assets': {'FRAME': {'path': os.path.join(c['_fr'], 'f_%05d.jpg' % f)}}}
         json.dump(body, open(req, 'w'))
         if not os.path.exists(out):
-            subprocess.run([CLI, 'evaluate', '--request', req, '--output', out], capture_output=True, text=True)
+            subprocess.run(CLI + ['evaluate', '--request', req, '--output', out], capture_output=True, text=True)
         try:
             b = json.load(open(out))['answers']['where'].get('box')
             if b: boxes[f] = [b['left'], b['top'], b['right'], b['bottom']]
