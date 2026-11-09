@@ -1,0 +1,9 @@
+You are {AUDIENCE}. You are watching this on {PLATFORM}. You know nothing about who made this video or how it was made. Watch and listen to it once, as you normally would.
+
+In plain words, tell me:
+1. Your honest first reaction at 1 second, at 3 seconds and at the end, and whether you would have kept watching.
+2. Anything that felt odd, off, cheap or distracting, and when it happened (MM:SS).
+3. What you thought of anyone who appears or speaks in it.
+4. What you would remember or do after watching.
+
+Only say what you actually noticed. Do not invent problems to be helpful, and do not list things that were fine.

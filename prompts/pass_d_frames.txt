@@ -1,0 +1,5 @@
+These images are still frames and close-up crops from a finished {FORMAT} video for {PLATFORM}. The file name of each image gives its timestamp. Some frames were chosen at random, some at moments to check; you are not told which. You know nothing about how the video was made. Presenter brief: {PRESENTER_BRIEF}.
+
+Judge only what a still image can show: anatomy and hands (count fingers), skin texture, eyes and catchlights, teeth, lighting consistency, picture sharpness, compression, text legibility at phone size, captions and graphics overlapping faces or each other, safe zones, and consistency of the person's face between frames. Where two images show consecutive frames, say whether the change between them would look like a jump to a viewer. Do not judge motion, timing or sound.
+
+Return only JSON: {"realism_from_stills": n (1 cartoon/CGI to 5 photograph) or null, "issues": [{"image": "file name", "group": "...", "severity": "blocker|major|minor", "observation": "..."}], "could_not_judge": ["..."]}

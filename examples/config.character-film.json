@@ -1,0 +1,129 @@
+{
+ "video": "renders/wedding-trailer-v1.mp4",
+ "out": "renders/.video-review/frames-pass",
+ "setting": "Stylised 3D cartoon Indian wedding trailer, silent with music; lakeside photo shoot, engagement, haldi, baraat, wedding gate, mandap.",
+ "characters": {
+  "GROOM_SHOOT": {
+   "sheet": "sheets/groom_shoot.png",
+   "who": "the man (the groom, tall, with a beard)"
+  },
+  "BRIDE_SHOOT": {
+   "sheet": "sheets/bride_shoot.png",
+   "who": "the woman (the bride)"
+  },
+  "GROOM_ENGAGE": {
+   "sheet": "sheets/groom_engage.png",
+   "who": "the man (the groom, tall, with a beard)"
+  },
+  "BRIDE_ENGAGE": {
+   "sheet": "sheets/bride_engage.png",
+   "who": "the woman (the bride)"
+  },
+  "GROOM_HALDI": {
+   "sheet": "sheets/groom_haldi.png",
+   "who": "the man (the groom, tall, with a beard)"
+  },
+  "BRIDE_HALDI": {
+   "sheet": "sheets/bride_haldi.png",
+   "who": "the woman (the bride)"
+  },
+  "GROOM_WEDDING": {
+   "sheet": "sheets/groom_wedding.png",
+   "who": "the man (the groom, tall, with a beard)"
+  },
+  "BRIDE_WEDDING": {
+   "sheet": "sheets/bride_wedding.png",
+   "who": "the woman (the bride)"
+  }
+ },
+ "ignore_text": [
+  [
+   40.0,
+   43.1
+  ]
+ ],
+ "shots": [
+  {
+   "id": "A1-lake",
+   "start": 0,
+   "end": 5,
+   "cast": [
+    "GROOM_SHOOT",
+    "BRIDE_SHOOT"
+   ],
+   "others": "nobody else",
+   "event": "Are the man and the woman laughing together in FRAME?",
+   "silent": true
+  },
+  {
+   "id": "A2-engage",
+   "start": 5,
+   "end": 10,
+   "cast": [
+    "GROOM_ENGAGE",
+    "BRIDE_ENGAGE"
+   ],
+   "others": "nobody else",
+   "event": "Is the man kneeling and holding an open red ring box towards the woman in FRAME?",
+   "silent": true
+  },
+  {
+   "id": "B1-haldi",
+   "start": 10,
+   "end": 15,
+   "cast": [
+    "GROOM_HALDI"
+   ],
+   "others": "nobody else",
+   "event": "Does the groom have yellow turmeric on his cheeks in FRAME?",
+   "silent": true
+  },
+  {
+   "id": "B2a-horse",
+   "start": 15,
+   "end": 20,
+   "cast": [
+    "GROOM_WEDDING"
+   ],
+   "others": "up to two drummers",
+   "event": "Is the groom sitting on a decorated white horse in FRAME?",
+   "silent": true,
+   "speed": 0.72
+  },
+  {
+   "id": "B2b-gate",
+   "start": 20,
+   "end": 25,
+   "cast": [
+    "BRIDE_WEDDING"
+   ],
+   "others": "nobody else",
+   "event": "Is the bride smiling in FRAME?",
+   "silent": true
+  },
+  {
+   "id": "C1-garland",
+   "start": 25,
+   "end": 30,
+   "cast": [
+    "GROOM_WEDDING",
+    "BRIDE_WEDDING"
+   ],
+   "others": "nobody else",
+   "event": "Is a flower garland on the groom's shoulders in FRAME?",
+   "silent": true
+  },
+  {
+   "id": "C2-mangalsutra",
+   "start": 30,
+   "end": 43.1,
+   "cast": [
+    "GROOM_WEDDING",
+    "BRIDE_WEDDING"
+   ],
+   "others": "nobody else",
+   "event": "Is the groom tying a yellow thread around the bride's neck in FRAME?",
+   "silent": true
+  }
+ ]
+}

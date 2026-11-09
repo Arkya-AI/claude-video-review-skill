@@ -1,0 +1,9 @@
+This is the soundtrack of a {FORMAT} video for {PLATFORM}, for {AUDIENCE}. You only hear it; there is no picture. You know nothing about how it was made.
+
+Listen to the whole track and report, with MM:SS.s timestamps, only what you actually hear:
+1. Does the voice sound like a real person explaining something to another person? Pace, pauses, breaths, emphasis that fits the meaning, emotional range. Rate 1 (clearly synthetic) to 5 (a real person).
+2. Any word that is mispronounced or unclear, especially names and technical terms.
+3. Any click, pop, warble, robotic or metallic sound, sudden volume or tone change, cut-off word or dropout.
+4. Music: does it sit under the voice, does it mask words, does it start or end abruptly?
+5. Anything else a listener would find odd.
+Return only JSON: {"voice_naturalness": n, "voice_notes": "...", "issues": [{"t": "MM:SS.s", "type": "...", "severity": "blocker|major|minor", "observation": "..."}], "could_not_judge": ["..."]}

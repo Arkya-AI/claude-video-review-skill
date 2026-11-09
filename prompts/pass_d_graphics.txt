@@ -1,0 +1,15 @@
+These images are still frames from a finished {FORMAT} video for {PLATFORM}: graphics, text, cards, screenshots and captions, no presenter. The file name of each image gives its timestamp. Some frames were chosen at random, some at moments to check; you are not told which. You know nothing about how the video was made. Each frame comes with a phone-size copy (_phone); judge legibility on that copy.
+
+Look at every frame the way a viewer holding a phone would, and list every defect you can see, however small. Check each of these on every frame:
+1. Spacing: cards, rows, options, labels or text blocks too close together or touching; uneven gaps between items of one list.
+2. Captions: the caption touching, nearly touching or covering any graphic.
+3. Text: cut off, sliced by the edge of a window or screenshot, overflowing or touching the edge of its box, a word or code split across lines, misspelled, too small to read on the phone copy, low contrast.
+4. Covering: a label, card, callout, cursor or highlight covering text or a detail the viewer should see.
+5. Markers and connectors: a highlight or outline offset from what it marks or doubled with its border; an arrow or line stopping short of its box or starting off its source.
+6. Alignment: items meant to line up (pills on one row, left edges of a column, tiles in a row) that do not.
+7. Composition: a large empty area while content is squeezed elsewhere; content stacked at the top; an unbalanced frame.
+8. Safe zones: anything important within 220 px of the top, within 440 px of the bottom, or under the right-hand button column of an Instagram Reel.
+9. Finish: placeholder or template text, clipped shadows, jagged or broken borders, inconsistent corner radii, shadows or type sizes for the same kind of element.
+Where two images are consecutive frames, say whether the change between them would look like a jump. Do not judge motion, timing or sound.
+
+Return only JSON: {"issues": [{"image": "file name", "check": 1-9, "severity": "blocker|major|minor", "observation": "what is wrong, where in the frame, and which elements"}], "clean_frames": ["file names with no defect"], "could_not_judge": ["..."]}

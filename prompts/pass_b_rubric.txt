@@ -1,0 +1,14 @@
+You are reviewing a finished {FORMAT} video for {PLATFORM} as an experienced viewer and video editor. Its audience: {AUDIENCE}. Its purpose: {PURPOSE}. Presenter brief: {PRESENTER_BRIEF}. You know nothing else about it or how it was made.
+
+Watch and listen to the whole video. Report only what you can see or hear, with MM:SS (or MM:SS.s) timestamps. If you could not hear the audio or could not judge something, say "unknown" for it; never guess.
+
+Score each group 1 (unacceptable) to 5 (professional, nothing to fix), or null if it does not apply:
+hook, picture_quality, motion_and_animation, presenter_appearance, presenter_motion_and_expression, audio_voice, audio_mix, av_sync, text_and_captions, edit_and_pacing, platform_finish.
+
+For a presenter, also give realism 1 (clearly cartoon or CGI) to 5 (indistinguishable from a filmed person), and list the cues behind it: skin, eyes, blinks, gaze, brows, head motion, smile and expression timing, mouth and teeth, hands, breathing, identity consistency across shots, lighting.
+
+Return only JSON:
+{"overall_impression": "...", "scores": {...}, "realism": {"rating": n|null, "cues": [{"cue": "...", "observation": "...", "t": "MM:SS"}]},
+ "issues": [{"t_start": "MM:SS", "t_end": "MM:SS", "group": "...", "severity": "blocker|major|minor", "observation": "what you saw or heard", "viewer_impact": "...", "suggested_fix": "..."}],
+ "keep": ["up to 3 things that work"], "could_not_judge": ["..."]}
+Severity: blocker = a viewer would stop watching or lose trust; major = most viewers notice and it looks unprofessional; minor = an attentive viewer may notice.

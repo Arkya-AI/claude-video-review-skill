@@ -1,0 +1,22 @@
+{
+ "text_defect": {"type": "noul", "label": "text cut off, overflowing or garbled", "fix": "resize or re-wrap the text box; stop scrolls on a line gap; check the template layout",
+  "instructions": "Is any text in FRAME cut off at an edge, sliced by the edge of a window or screenshot, overflowing or touching the edge of its card or box, split across lines in the middle of a word or code, misspelled, or garbled?"},
+ "small_text": {"type": "noul", "label": "important text too small for a phone", "fix": "zoom in on the key line or enlarge the text",
+  "instructions": "Imagine FRAME shown full screen on a phone about 6 inches tall. Is text that seems important to the message too small to read comfortably at that size?"},
+ "crowding": {"type": "noul", "label": "blocks crowded together", "fix": "space blocks at least 40 px apart; spread them over the safe area",
+  "instructions": "Are any two cards, boxes, rows, options, labels or text blocks in FRAME so close together that they look cramped or almost touching, when there is free space elsewhere in the frame?"},
+ "caption_clearance": {"type": "noul", "label": "caption crowding the picture", "fix": "keep captions at least 56 px from any block",
+  "instructions": "Is the caption or subtitle in FRAME touching, nearly touching or covering a card, box or other graphic?"},
+ "covering": {"type": "noul", "label": "something covers what it should show", "fix": "place labels, cards and pointers beside their target, never on it",
+  "instructions": "Does any label, card, callout, cursor or highlight in FRAME cover text or a detail that the viewer should be able to see, such as a cursor on a button's label or a card on top of a screenshot's text?"},
+ "marker_alignment": {"type": "noul", "label": "highlight or outline misaligned", "fix": "align the marker to the element's real bounds",
+  "instructions": "Is any highlight, outline, ring or underline in FRAME visibly offset from the thing it marks, larger or smaller on one side, or doubled with that thing's own border?"},
+ "connector": {"type": "noul", "label": "arrow or line not connected", "fix": "end arrows on the edge of their target box and start them on their source",
+  "instructions": "Does any arrow, line or connector in FRAME stop short of the box it points to, overshoot into it, or start away from the shape it comes from?"},
+ "composition": {"type": "noul", "label": "frame not used well", "fix": "spread the layout over the safe area; let background and visuals run to the edges",
+  "instructions": "Is a large part of FRAME (for example the bottom third or a big side area) left empty while the content is squeezed into the rest, or does the layout look unbalanced?"},
+ "contrast": {"type": "noul", "label": "text hard to read against its background", "fix": "raise the contrast or move the text off the image",
+  "instructions": "Is any text in FRAME hard to read because of low contrast with what is behind it?"},
+ "placeholder": {"type": "noul", "label": "placeholder or debug text visible", "fix": "remove the placeholder",
+  "instructions": "Does FRAME show text that looks like a placeholder, a debug label, a template name or an internal note rather than content for viewers?"}
+}
